@@ -54,10 +54,13 @@ function get_cities_lat_long(file::String)
 end
 
 # ╔═╡ 0103c201-848d-4fc5-8901-1a57f563f9c5
-@time df_cities = get_cities_lat_long("cities15000.txt")
+df_cities_500 = get_cities_lat_long("cities500.txt")
+
+# ╔═╡ 048779a9-67af-4a5b-b834-8b90e190557b
+#CSV.write("cities500_lat_long.csv", df_cities_500)
 
 # ╔═╡ b03de1fb-fd8d-4b90-91ac-e5b6b8f4defb
-filter(row -> row.CITY == "Eindhoven", df_cities)
+filter(row -> row.CITY == "Eindhoven", df_cities_500)
 
 # ╔═╡ 355be494-8fc6-4109-b003-8ae458e310d7
 md"
@@ -610,6 +613,7 @@ version = "17.4.0+0"
 # ╟─f28b932f-e65c-4543-99f4-3c21f8544ae5
 # ╟─90aa64dd-4ce9-4d02-b18a-22bd8f17dcf8
 # ╠═0103c201-848d-4fc5-8901-1a57f563f9c5
+# ╠═048779a9-67af-4a5b-b834-8b90e190557b
 # ╠═b03de1fb-fd8d-4b90-91ac-e5b6b8f4defb
 # ╟─355be494-8fc6-4109-b003-8ae458e310d7
 # ╠═4918f10a-a506-47cf-a7d7-6d67e403817c
