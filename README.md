@@ -1,7 +1,7 @@
 # GeoNames_notebook.jl
 
 This repository contains a Pluto notebook to inspect data obtained from 
-[GeoNames.](https://download.geonames.org/export/dump/). 
+[GeoNames.](https://download.geonames.org/export/dump/)
 
 This work is licensed under a Creative Commons Attribution 4.0 License,
 see [here.](https://creativecommons.org/licenses/by/4.0/) The data is provided
