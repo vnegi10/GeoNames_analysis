@@ -13,8 +13,8 @@ package.**
 
 ## Files
 
-cities500.zip --> all cities with a population > 500
-cities15000.zip --> all cities with a population > 15000
+- cities500.txt --> all cities with a population > 500
+- cities15000.txt --> all cities with a population > 15000
 
 ## Data extracted
 
