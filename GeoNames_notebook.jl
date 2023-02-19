@@ -62,6 +62,20 @@ df_cities_500 = get_cities_lat_long("cities500.txt")
 # ╔═╡ b03de1fb-fd8d-4b90-91ac-e5b6b8f4defb
 filter(row -> row.CITY == "Eindhoven", df_cities_500)
 
+# ╔═╡ 974cf0b8-767f-4079-b5dd-83b010e84388
+function url_to_df(url::String) 
+	
+	df = CSV.File(HTTP.get(url, 
+	                       require_ssl_verification = false).body, 
+	                       header = 1) |> DataFrame
+	
+	return df
+	
+end
+
+# ╔═╡ 4fc220a1-9e10-4a16-932b-bee2c871f07e
+@time df = url_to_df("https://raw.githubusercontent.com/vnegi10/GeoNames_analysis/master/cities500_lat_long.csv")
+
 # ╔═╡ 355be494-8fc6-4109-b003-8ae458e310d7
 md"
 ### Open-Meteo API
@@ -615,6 +629,8 @@ version = "17.4.0+0"
 # ╠═0103c201-848d-4fc5-8901-1a57f563f9c5
 # ╠═048779a9-67af-4a5b-b834-8b90e190557b
 # ╠═b03de1fb-fd8d-4b90-91ac-e5b6b8f4defb
+# ╟─974cf0b8-767f-4079-b5dd-83b010e84388
+# ╠═4fc220a1-9e10-4a16-932b-bee2c871f07e
 # ╟─355be494-8fc6-4109-b003-8ae458e310d7
 # ╠═4918f10a-a506-47cf-a7d7-6d67e403817c
 # ╠═34fbd153-0002-43c6-88aa-f2f561265920
